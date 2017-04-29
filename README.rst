@@ -21,7 +21,7 @@ basil
 basil is a tool for tracking and visualizing personal finance.
 
 
-* Free software: GNU General Public License v3
+* Free software: GNU Affero General Public License v3 or later (AGPLv3+)
 * Documentation: https://basil.readthedocs.io.
 
 
