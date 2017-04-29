@@ -111,7 +111,7 @@
 # Category
 # DEBIT OR CREDIT
 
-# Category
+# Category (not included in CSV)
 # Automotive
     # oil changes
     # car washes
