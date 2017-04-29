@@ -1,3 +1,29 @@
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### SublimeText ###
+# cache files for sublime text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# workspace files are user-specific
+*.sublime-workspace
+
+# project files should be checked into the repository, unless a significant
+# proportion of contributors will probably not be using SublimeText
+*.sublime-project
+
+# sftp configuration file
+sftp-config.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -50,8 +76,8 @@ coverage.xml
 *.pot
 
 # Django stuff:
-*.log
 local_settings.py
+staticfiles/
 
 # Flask stuff:
 instance/
@@ -92,5 +118,19 @@ ENV*/
 # Rope project settings
 .ropeproject
 
-# Misc.
-.*.sw*
+# Pycharm
+.idea/*
+
+# Vim
+*~
+*.sw*
+*.swo
+
+# npm
+node_modules/
+
+# Compass
+.sass-cache
+
+# User-uploaded media
+basil/media/
