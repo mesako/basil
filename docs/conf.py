@@ -258,7 +258,7 @@ texinfo_documents = [
      u'basil Documentation',
      u'Melissa Ko and Jordan Moldow',
      'basil',
-     'One line description of project.',
+     'basil is a tool for tracking and visualizing personal finance.',
      'Miscellaneous'),
 ]
 
