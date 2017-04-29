@@ -63,6 +63,7 @@ pip-delete-this-directory.txt
 # Unit test / coverage reports
 htmlcov/
 .tox/
+coverage/
 .coverage
 .coverage.*
 .cache
@@ -134,3 +135,6 @@ node_modules/
 
 # User-uploaded media
 basil/media/
+
+# Misc
+*.db

@@ -1,5 +1,13 @@
 [run]
+branch = True
 include = basil/*
-omit = *migrations*, *tests*
+omit = *migrations*,
+       *urls*,
+       *test*,
+       *admin*,
+       ./basil/config/*,
+       ./basil/manage.py,
+       ./basil/wsgi.py,
+       *__init__*
 plugins =
     django_coverage_plugin

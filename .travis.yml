@@ -18,9 +18,19 @@ install: pip install -U tox
 
 language: python
 python: 3.6
+services:
+  - postgresql
+
+before_script:
+  - export DATABASE_URL=postgres://postgres@localhost/basil
+  - export DJANGO_SECRET=`openssl rand -base64 32`
+  - psql -c 'CREATE DATABASE "basil";' -U postgres
 
 # command to run tests, e.g. python setup.py test
 script: tox -e ${TOXENV}
+
+after_success:
+  - coveralls
 
 deploy:
   provider: pypi
@@ -44,3 +54,5 @@ deploy:
     condition: $TOXENV == py36
     repo: mesako/basil
     tags: true
+
+cache: pip
