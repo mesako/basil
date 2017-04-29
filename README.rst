@@ -3,19 +3,12 @@ basil
 =====
 
 
-.. image:: https://img.shields.io/pypi/v/basil.svg
-        :target: https://pypi.python.org/pypi/basil
-
 .. image:: https://img.shields.io/travis/mesako/basil.svg
         :target: https://travis-ci.org/mesako/basil
 
-.. image:: https://readthedocs.org/projects/basil/badge/?version=latest
-        :target: https://basil.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-
-.. image:: https://pyup.io/repos/github/mesako/basil/shield.svg
-     :target: https://pyup.io/repos/github/mesako/basil/
-     :alt: Updates
+.. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20pypackage-ff69b4.svg
+     :target: https://github.com/audreyr/cookiecutter-pypackage/
+     :alt: Built with Cookiecutter Django
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
@@ -26,10 +19,10 @@ basil is a tool for tracking and visualizing personal finance.
 
 
 :License: AGPLv3+
+:Repository: https://github.com/mesako/basil
 
 
 * Free software: GNU Affero General Public License v3 or later (AGPLv3+)
-* Documentation: https://basil.readthedocs.io.
 
 
 Features
