@@ -11,7 +11,7 @@ CATEGORIES["Travel"] = {"Travel", "Cruise", "Hotel", "Lodging", "Accommodations"
     "Air Travel", "Flights", "Airlines", "Rental Car", "Taxi", "Vacation"}
 CATEGORIES["Car and Transit"] = {"AAA", "Gas", "Fuel", "Car Insurance", "Auto",
     "Parking", "Mechanic", "Auto Repair", "Train", "Subway", "Metro"}
-CATEGORIES["Bills and Utilities"] = {"Housing", "Rent", "Energy", "Electricity",
+CATEGORIES["Bills/Utilities"] = {"Housing", "Rent", "Energy", "Electricity",
     "Heat", "Water", "Garbage", "Internet", "Phone", "Renter's Insurance", "Television"}
 CATEGORIES["Health"] = {"Dentist", "Doctor", "Prescription", "Medication",
     "Pharmacy", "Eyecare", "Health Insurance", "Copay"}
@@ -19,7 +19,7 @@ CATEGORIES["Fun"] = {"Fun", "Entertainment", "Arts", "Music", "Movies", "Hobbies
     "Spa", "Games"}
 CATEGORIES["Savings"] = {"House", "IRA", "Brokerage", "Investments", "Wedding",
     "Honeymoon"}
-CATEGORIES["Life and Household Expenses"] = {"Clothes", "Household Supplies",
+CATEGORIES["Life/Household"] = {"Clothes", "Household Supplies",
     "Personal Care", "Charity", "Gifts", "Shopping", "Education", "Books",
     "Electronics", "Laundry", "Hair", "Salon", "Donations"}
 CATEGORIES["Taxes"] = {"Federal", "State", "Tax"}
