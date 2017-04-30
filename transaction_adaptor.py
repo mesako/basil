@@ -2,7 +2,9 @@
 import csv
 import string
 import datetime
+import re
 from decimal import Decimal
+from transaction import Transaction
 
 def discover_adaptor(file_path : str):
     '''

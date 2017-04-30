@@ -5,7 +5,7 @@ from operator import attrgetter, methodcaller
 COLUMNS = ["date", "merchant", "amount", "description", "category"]
 
 def convert_transaction_list_to_matrix(transaction_list):
-    transaction_matrix = np.matrix(list(map(attrgetter(COLUMNS), transaction_list)))
+    transaction_matrix = np.matrix(list(map(attrgetter(*COLUMNS), transaction_list)))
     return transaction_matrix
 
 def convert_transaction_matrix_to_df(transaction_matrix):
