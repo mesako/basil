@@ -58,3 +58,4 @@ target/
 
 # Melissa test file
 Melissa_test.py
+.DS_Store
