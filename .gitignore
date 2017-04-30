@@ -138,3 +138,6 @@ basil/media/
 
 # Misc
 *.db
+
+# Melissa test file
+Melissa_test.py
