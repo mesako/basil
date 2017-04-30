@@ -2,6 +2,7 @@
 import csv
 import string
 import datetime
+from decimal import Decimal
 
 def discover_adaptor(file_path : str):
     '''
@@ -18,30 +19,20 @@ def discover_adaptor(file_path : str):
     return transaction_list
 
 def make_transaction_from_discover(discover_transaction):
-    date = change_date(discover_transaction["Trans. Date"])
+    date = datetime.datetime.strptime(discover_transaction["Trans. Date"], "%m/%d/%Y").date()
     amount = change_amount(discover_transaction["Amount"])
-    merchant = change_merchant(discover_transaction["Description"])
+    merchant = clean_merchant_name(discover_transaction["Description"])
     transaction_object = Transaction(date = date, amount = amount, merchant = merchant)
     return transaction_object
 
-def change_date(trans_date : str):
-    correct_date = trans_date.split(sep = "/")
-    correct_date = list(map(int, correct_date))
-    correct_date = month_day_year_to_date(*correct_date)
-    return correct_date
-
-def month_day_year_to_date(month, day, year):
-    return date(year, month, day)
-
 def change_amount(amount : str):
-    correct_amount = float(amount)
+    correct_amount = Decimal(amount)
     return correct_amount
 
-def change_merchant(merchant : str):
+def clean_merchant_name(merchant : str):
     regex = re.compile('[^a-zA-Z -]')
-    correct_merchant = regex.sub('', merchant).title()
-    return correct_merchant
-
+    clean_merchant = regex.sub('', merchant).title()
+    return clean_merchant
 
 def barclay_adaptor(file_path : str):
     '''
@@ -64,9 +55,9 @@ def barclay_adaptor(file_path : str):
     return transaction_list
 
 def make_transaction_from_barclay(barclay_transaction):
-    date = change_date(barclay_transaction["Transaction Date"])
+    date = datetime.datetime.strptime(barclay_transaction["Transaction Date"], "%m/%d/%Y").date()
     amount = -change_amount(barclay_transaction["Amount"])
-    merchant = change_merchant(barclay_transaction["Description"])
+    merchant = clean_merchant_name(barclay_transaction["Description"])
     transaction_object = Transaction(date = date, amount = amount, merchant = merchant)
     return transaction_object
 
@@ -86,8 +77,8 @@ def chase_adaptor(file_path : str):
     return transaction_list
 
 def make_transaction_from_chase(chase_transaction):
-    date = change_date(chase_transaction["Trans Date"])
+    date = datetime.datetime.strptime(chase_transaction["Trans Date"], "%m/%d/%Y").date()
     amount = -change_amount(chase_transaction["Amount"])
-    merchant = change_merchant(chase_transaction["Description"])
+    merchant = clean_merchant_name(chase_transaction["Description"])
     transaction_object = Transaction(date = date, amount = amount, merchant = merchant)
     return transaction_object
