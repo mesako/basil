@@ -1,0 +1,26 @@
+# Test dependencies go here.
+-r base.txt
+
+
+
+# Code Coverage
+coverage==4.3.4
+django-coverage-plugin==1.5.0
+
+# Style Enforcement
+flake8==3.3.0 # pyup: != 2.6.0
+django-test-plus==1.0.17
+
+# Fixtures
+factory-boy==2.8.1
+
+# pytest
+pytest-django==3.1.2
+pytest-sugar==0.8.0
+
+# Mocking
+mock==2.0.0
+
+# Test Runner
+django-nose==1.4.4
+nose-progressive==1.5.1

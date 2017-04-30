@@ -1,0 +1,11 @@
+site_name: basil
+site_description: basil is a tool for tracking and visualizing personal finance.
+repo_url: https://github.com/mesako/basil
+site_dir: site
+copyright: Copyright &copy; 2017, <a href="https://github.com/mesako">Melissa Ko</a> and <a href="https://github.com/jmoldow">Jordan Moldow</a>.
+
+pages:
+  - Home: 'index.md'
+  - API:
+    - Authentication: 'api/authentication.md'
+    - Users: 'api/users.md'

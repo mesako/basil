@@ -1,0 +1,9 @@
+-r base.txt
+
+pip>=8.1.2
+bumpversion>=0.5.3
+watchdog>=0.8.3
+tox>=2.3.1
+cryptography>=1.7
+PyYAML>=3.11
+pytest>=2.9.2
