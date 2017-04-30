@@ -4,6 +4,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from rest_framework import routers, viewsets
+
+import basil.users.views
+
+# Routers provide an easy way of automatically determining the URL conf.
+rest_framework_router = routers.DefaultRouter()
+rest_framework_router.register(r'users', basil.users.views.UserViewSet)  # TODO
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
@@ -14,7 +21,10 @@ urlpatterns = [
 
     # User management
     url(r'^users/', include('basil.users.urls', namespace='users')),
+    url(r'^api/', include(rest_framework_router.urls)),
     url(r'^accounts/', include('allauth.urls')),
+
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     # Your stuff: custom urls includes go here
 
