@@ -36,18 +36,22 @@ def generate_possible_category_list(transaction):
                 break
     return possible_categories
 
-
-def add_categories_key_tags_pair(CATEGORIES, new_category_tags_pair):
+def add_categories_key_tags_pair(new_category_tags_pair):
     for new_key in list(new_category_tags_pair.keys()):
         CATEGORIES[new_key] = new_category_tags_pair.pop(new_key)
     
-
-def change_categories_key(CATEGORIES, old_key, updated_key):
+def change_categories_key(old_key, updated_key):
     CATEGORIES[updated_key] = CATEGORIES.pop(old_key)
 
+def remove_categories_key(remove_key):
+    CATEGORIES.pop(remove_key)
 
-def add_categories_tag(CATEGORIES, which_key, new_tag):
+def add_categories_tag(which_key, new_tag):
     CATEGORIES[which_key].add(new_tag)
+
+def remove_categories_tag(which_key, remove_tag):
+    CATEGORIES[which_key].remove(remove_tag)
+
 
 
 # Reimbursement	
