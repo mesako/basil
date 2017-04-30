@@ -57,6 +57,7 @@ LOCAL_APPS = [
     # custom users app
     'basil.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'basil.basil.apps.BasilConfig',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

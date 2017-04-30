@@ -6,6 +6,7 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from rest_framework import routers, viewsets
 
+import basil.basil.views
 import basil.users.views
 
 # Routers provide an easy way of automatically determining the URL conf.
@@ -21,12 +22,14 @@ urlpatterns = [
 
     # User management
     url(r'^users/', include('basil.users.urls', namespace='users')),
-    url(r'^api/', include(rest_framework_router.urls)),
     url(r'^accounts/', include('allauth.urls')),
 
+    # REST API
+    url(r'^api/', include(rest_framework_router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     # Your stuff: custom urls includes go here
+    url(r'^basil/', include('basil.basil.urls', namespace='basil')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
