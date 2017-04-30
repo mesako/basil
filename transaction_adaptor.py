@@ -3,7 +3,6 @@ import csv
 import string
 import datetime
 
-
 def discover_adaptor(file_path : str):
     '''
     Discover

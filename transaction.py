@@ -10,7 +10,7 @@ class Transaction:
         self.category = category
         
     def __repr__(self):
-        return f"<${self.amount} at {self.merchant} on {self.date}>"
+        return f"<Transaction for ${self.amount} at {self.merchant} on {self.date}>"
 
 
 
