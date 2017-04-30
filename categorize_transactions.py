@@ -4,27 +4,51 @@
 # tags = keywords
 # desc = string description of category
 
-categories = {}
-categories["Food"] = {"Food", "Restaurants", "Grocery Store", "Groceries", "Supermarket", "Market",
+CATEGORIES = {}
+CATEGORIES["Food"] = {"Food", "Restaurants", "Grocery Store", "Groceries", "Supermarket", "Market",
     "Coffee Shop", "Fast Food", "Snacks", "Dessert", "Drinks", "Bars", "Alcohol", "Cafe", "Dining"}
-categories["Travel"] = {"Travel", "Cruise", "Hotel", "Lodging", "Accommodations",
+CATEGORIES["Travel"] = {"Travel", "Cruise", "Hotel", "Lodging", "Accommodations",
     "Air Travel", "Flights", "Airlines", "Rental Car", "Taxi", "Vacation"}
-categories["Car and Transit"] = {"AAA", "Gas", "Fuel", "Car Insurance", "Auto",
+CATEGORIES["Car and Transit"] = {"AAA", "Gas", "Fuel", "Car Insurance", "Auto",
     "Parking", "Mechanic", "Auto Repair", "Train", "Subway", "Metro"}
-categories["Bills and Utilities"] = {"Housing", "Rent", "Energy", "Electricity",
+CATEGORIES["Bills and Utilities"] = {"Housing", "Rent", "Energy", "Electricity",
     "Heat", "Water", "Garbage", "Internet", "Phone", "Renter's Insurance", "Television"}
-categories["Health"] = {"Dentist", "Doctor", "Prescription", "Medication",
+CATEGORIES["Health"] = {"Dentist", "Doctor", "Prescription", "Medication",
     "Pharmacy", "Eyecare", "Health Insurance", "Copay"}
-categories["Fun"] = {"Fun", "Entertainment", "Arts", "Music", "Movies", "Hobbies",
+CATEGORIES["Fun"] = {"Fun", "Entertainment", "Arts", "Music", "Movies", "Hobbies",
     "Spa", "Games"}
-categories["Savings"] = {"House", "IRA", "Brokerage", "Investments", "Wedding",
+CATEGORIES["Savings"] = {"House", "IRA", "Brokerage", "Investments", "Wedding",
     "Honeymoon"}
-categories["Life and Household Expenses"] = {"Clothes", "Household Supplies",
+CATEGORIES["Life and Household Expenses"] = {"Clothes", "Household Supplies",
     "Personal Care", "Charity", "Gifts", "Shopping", "Education", "Books",
     "Electronics", "Laundry", "Hair", "Salon", "Donations"}
-categories["Taxes"] = {"Federal", "State", "Tax"}
-categories["Income"] = {"Income", "Paycheck", "Gift", "Bonus", "Investment",
+CATEGORIES["Taxes"] = {"Federal", "State", "Tax"}
+CATEGORIES["Income"] = {"Income", "Paycheck", "Gift", "Bonus", "Investment",
     "Interest"}
+
+def generate_possible_category_list(transaction):
+    possible_categories = []
+    for k in CATEGORIES.keys():
+        for v in CATEGORIES[k]:
+            match = re.search(pattern = v, string = transaction.merchant)
+            if match:
+                possible_categories.append(k)
+                break
+    return possible_categories
+
+
+def add_categories_key_tags_pair(CATEGORIES, new_category_tags_pair):
+    for new_key in list(new_category_tags_pair.keys()):
+        CATEGORIES[new_key] = new_category_tags_pair.pop(new_key)
+    
+
+def change_categories_key(CATEGORIES, old_key, updated_key):
+    CATEGORIES[updated_key] = CATEGORIES.pop(old_key)
+
+
+def add_categories_tag(CATEGORIES, which_key, new_tag):
+    CATEGORIES[which_key].add(new_tag)
+
 
 # Reimbursement	
 # Refund
