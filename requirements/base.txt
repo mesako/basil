@@ -74,3 +74,6 @@ django-rq==0.9.5
 
 
 # Your custom requirements go here
+wrapt
+
+# SciPy stack
