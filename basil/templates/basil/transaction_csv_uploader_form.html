@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Transaction CSV Uploader{% endblock %}
+
+{% block content %}
+  <h1>Transaction CSV Uploader</h1>
+  <form class="form-horizontal" method="post" action="{% url 'basil:transaction_csv_uploader' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn">Upload</button>
+      </div>
+    </div>
+  </form>
+{% endblock %}
